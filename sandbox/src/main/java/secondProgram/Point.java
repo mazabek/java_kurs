@@ -16,9 +16,4 @@ public class Point {
         return Math.sqrt(Math.pow((p2.coordinateX-this.coordinateX), 2)+Math.pow((p2.coordinateY-this.coordinateY), 2));
     }
 
-    {
-
-
-    }
-
 }

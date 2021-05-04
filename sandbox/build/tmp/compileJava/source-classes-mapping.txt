@@ -1,10 +1,10 @@
 first/program/Rectangle.java
  first.program.Rectangle
-first/program/Square.java
- first.program.Square
 first/program/MyFirstProgram.java
  first.program.MyFirstProgram
-secondProgram/Point.java
- secondProgram.Point
+first/program/Square.java
+ first.program.Square
 secondProgram/MySecondProgram.java
  secondProgram.MySecondProgram
+secondProgram/Point.java
+ secondProgram.Point
