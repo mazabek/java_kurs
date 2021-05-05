@@ -2,3 +2,7 @@ addressbook/GroupCreationTests.java
  addressbook.GroupCreationTests
 addressbook/GroupData.java
  addressbook.GroupData
+addressbook/ContactGroup.java
+ addressbook.ContactGroup
+addressbook/CreateContact.java
+ addressbook.CreateContact
