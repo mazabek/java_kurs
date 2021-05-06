@@ -27,4 +27,24 @@ public class ContactHelper extends HelperBase {
         type(By.name("work"), contactGroup.getTelwork());
         type(By.name("email"), contactGroup.getEmail());
     }
+
+    public void initContactModification() {
+        click(By.xpath("//img[@alt='Edit']"));
+    }
+
+    public void submitContactModification() {
+        click(By.xpath("(//input[@name='update'])[2]"));
+    }
+
+    public void chooseContact() {
+        click(By.id("3"));
+    }
+
+    public void sumbitContactDeletion() {
+        click(By.xpath("//input[@value='Delete']"));
+    }
+
+    public void confirmDeleteAlert() {
+        wd.switchTo().alert().accept();
+    }
 }
