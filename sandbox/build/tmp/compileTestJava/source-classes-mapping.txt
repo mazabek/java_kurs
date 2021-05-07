@@ -2,3 +2,5 @@ first/program/SquareTests.java
  first.program.SquareTests
 secondProgram/PointTests.java
  secondProgram.PointTests
+first/program/EquationTests.java
+ first.program.EquationTests

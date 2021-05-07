@@ -8,3 +8,5 @@ secondProgram/MySecondProgram.java
  secondProgram.MySecondProgram
 secondProgram/Point.java
  secondProgram.Point
+first/program/Equation.java
+ first.program.Equation
