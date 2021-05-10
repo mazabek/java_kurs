@@ -37,7 +37,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void chooseContact() {
-        click(By.id("3"));
+        click(By.name("selected[]"));
     }
 
     public void sumbitContactDeletion() {
