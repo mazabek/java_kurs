@@ -14,7 +14,7 @@ public class GroupCreationTests extends TestBase {
         app.getGroupHelper().returnToGroupPage();
     }
 
-    //  private boolean isElementPresent(By by) {
+//      private boolean isElementPresent(By by) {
 //    try {
 //      wd.findElement(by);
 //      return true;

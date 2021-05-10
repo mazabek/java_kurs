@@ -1,8 +1,11 @@
 package addressbook.appmanager;
 
 import addressbook.model.ContactGroup;
+import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class ContactHelper extends HelperBase {
 
@@ -18,7 +21,7 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("(//input[@name='submit'])[2]"));
     }
 
-    public void fillNewContact(ContactGroup contactGroup) {
+    public void fillNewContact(ContactGroup contactGroup, boolean creation) {
         type(By.name("firstname"), contactGroup.getFirstname());
         type(By.name("lastname"), contactGroup.getLastname());
         type(By.name("address"), contactGroup.getAddress());
@@ -26,6 +29,12 @@ public class ContactHelper extends HelperBase {
         type(By.name("mobile"), contactGroup.getTelmobile());
         type(By.name("work"), contactGroup.getTelwork());
         type(By.name("email"), contactGroup.getEmail());
+
+        if(creation){
+            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactGroup.getGroup());
+        }else{
+            Assert.assertFalse(isElementPresent(By.name("new_group")));
+        }
     }
 
     public void initContactModification() {
