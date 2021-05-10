@@ -20,11 +20,11 @@ addressbook/tests/CreateContact.java
  addressbook.tests.CreateContact
 addressbook/tests/GroupModificationTests.java
  addressbook.tests.GroupModificationTests
-addressbook/appmanager/ApplicationManager.java
- addressbook.appmanager.ApplicationManager
+addressbook/tests/GroupCreationTests.java
+ addressbook.tests.GroupCreationTests
 addressbook/appmanager/NavigationHelper.java
  addressbook.appmanager.NavigationHelper
 addressbook/tests/GroupDeletionTests.java
  addressbook.tests.GroupDeletionTests
-addressbook/tests/GroupCreationTests.java
- addressbook.tests.GroupCreationTests
+addressbook/appmanager/ApplicationManager.java
+ addressbook.appmanager.ApplicationManager
