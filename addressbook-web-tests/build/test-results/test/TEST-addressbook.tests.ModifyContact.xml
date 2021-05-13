@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="addressbook.tests.ModifyContact" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-13T08:28:12" hostname="J4KK6S2" time="4.511">
+  <properties/>
+  <testcase name="testModifyContact" classname="addressbook.tests.ModifyContact" time="4.511"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+1620894487131	geckodriver	INFO	Listening on 127.0.0.1:30420
+1620894488165	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "0" "-foreground" "-no-remote" "-profile" "C:\\Users\\mzabek\\AppData\\Local\\Temp\\rust_mozprofileIcHd4I"
+1620894488620	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+DevTools listening on ws://localhost:61084/devtools/browser/0de9562d-8dc3-44a4-a3da-ef12fe668058
+1620894491499	Marionette	INFO	Listening on port 61065
+1620894491818	Marionette	WARN	TLS certificate errors will be ignored for this session
+maj 13, 2021 10:28:11 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+1620894497329	Marionette	INFO	Stopped listening on port 61065
+!!! error running onStopped callback: TypeError: callback is not a function
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1620894497953	RemoteAgent	ERROR	unable to stop listener: [Exception... "Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIWindowMediator.getEnumerator]"  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: chrome://remote/content/cdp/observers/TargetObserver.jsm :: stop :: line 64"  data: no] Stack trace: stop()@TargetObserver.jsm:64
+unwatchForTabs()@TargetList.jsm:70
+unwatchForTargets()@TargetList.jsm:37
+destructor()@TargetList.jsm:109
+close()@RemoteAgent.jsm:136
+]]></system-err>
+</testsuite>

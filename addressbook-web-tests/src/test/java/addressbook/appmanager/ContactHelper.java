@@ -56,4 +56,14 @@ public class ContactHelper extends HelperBase {
     public void confirmDeleteAlert() {
         wd.switchTo().alert().accept();
     }
+
+    public void createContact(ContactGroup contact) {
+        fillNewContact(contact,true);
+        submitContactCreation();
+        returnToHomePage();
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
+    }
 }
