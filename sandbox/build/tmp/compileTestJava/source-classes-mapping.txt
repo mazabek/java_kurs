@@ -1,6 +1,8 @@
-first/program/SquareTests.java
- first.program.SquareTests
 secondProgram/PointTests.java
  secondProgram.PointTests
+first/program/PrimeTests.java
+ first.program.PrimeTests
 first/program/EquationTests.java
  first.program.EquationTests
+first/program/SquareTests.java
+ first.program.SquareTests

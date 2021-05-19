@@ -10,3 +10,7 @@ secondProgram/Point.java
  secondProgram.Point
 first/program/Equation.java
  first.program.Equation
+first/program/Primes.java
+ first.program.Primes
+first/program/Collections.java
+ first.program.Collections
