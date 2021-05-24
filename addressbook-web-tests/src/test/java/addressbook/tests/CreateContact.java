@@ -5,26 +5,21 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 
 public class CreateContact extends TestBase {
 
   @Test
   public void testCreateContact() {
-    List<ContactGroup> before = app.getContactHelper().getContactList();
-    app.getNavigationHelper().goToAddNewContact();
-
+    List<ContactGroup> before = app.contact().list();
+    app.goTo().goToAddNewContact();
     ContactGroup group = new ContactGroup("Name", "Lastname",
             "Address", "123123123",
             "456456465", "789789789",
             "test@test.com", "test1");
-
-    app.getContactHelper().fillNewContact(group, true);
-    app.getContactHelper().submitContactCreation();
-    app.getContactHelper().returnToHomePage();
+    app.contact().create(group);
     //app.logOut();
-    List<ContactGroup> after = app.getContactHelper().getContactList();
+    List<ContactGroup> after = app.contact().list();
     Assert.assertEquals(after.size(), before.size() +1);
 
     before.add(group);
