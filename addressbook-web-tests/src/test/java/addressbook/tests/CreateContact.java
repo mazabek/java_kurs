@@ -1,32 +1,27 @@
 package addressbook.tests;
 
 import addressbook.model.ContactGroup;
-import org.testng.Assert;
-import org.testng.annotations.*;
+import addressbook.model.Contacts;
+import org.testng.annotations.Test;
 
-import java.util.Comparator;
-import java.util.List;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class CreateContact extends TestBase {
 
   @Test
   public void testCreateContact() {
-    List<ContactGroup> before = app.contact().list();
+    Contacts before = app.contact().all();
     app.goTo().goToAddNewContact();
-    ContactGroup group = new ContactGroup("Name", "Lastname",
-            "Address", "123123123",
-            "456456465", "789789789",
-            "test@test.com", "test1");
+    ContactGroup group = new ContactGroup()
+            .withFirstname("Name").withLastname("Lastname").withAddress("Address")
+            .withTelhome("123123123").withTelmobile("456456456").withTelwork("789798798")
+            .withEmail("test@test.com").withGroup("test1");
     app.contact().create(group);
     //app.logOut();
-    List<ContactGroup> after = app.contact().list();
-    Assert.assertEquals(after.size(), before.size() +1);
-
-    before.add(group);
-    Comparator<? super ContactGroup> byId = (g1, g2) -> Integer.compare(g1.getId(), g2.getId());
-    before.sort(byId);
-    after.sort(byId);
-    Assert.assertEquals(before, after);
+    Contacts after = app.contact().all();
+    assertThat(after.size(), equalTo(before.size() +1));
+    assertThat(after, equalTo(before.withAdded(group.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt()))));
   }
 
 }

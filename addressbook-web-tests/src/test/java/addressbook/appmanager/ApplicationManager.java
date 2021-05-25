@@ -31,7 +31,7 @@ public class ApplicationManager {
             wd = new EdgeDriver();
         }
 
-        wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wd.get("http://localhost:1000/addressbook/");
         groupHelper = new GroupHelper(wd);
         contactHelper = new ContactHelper(wd);

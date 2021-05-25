@@ -1,32 +1,40 @@
 package addressbook.tests;
 
 import addressbook.model.ContactGroup;
+import addressbook.model.Contacts;
 import addressbook.model.GroupData;
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.Set;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.testng.Assert.assertEquals;
 
 public class DeleteContact extends TestBase{
     @BeforeMethod
     public void ensurePreconditions(){
         if(! app.contact().isThereAContact()){
             app.goTo().goToAddNewContact();
-            app.contact().create(new ContactGroup("Name", "Lastname",
-                    "Address", "123123123",
-                    "456456465", "789789789",
-                    "test@test.com", "test1"));
+            app.contact().create(new ContactGroup().withFirstname("Name").withLastname("Lastname").withAddress("Address")
+                    .withTelhome("123123123").withTelmobile("456456456").withTelwork("789798798")
+                    .withEmail("test@test.com").withGroup("test1"));
         }
     }
-    @Test
+    @Test()
     public void testDeleteContact(){
-        List<ContactGroup> before = app.contact().list();
-        app.contact().delete(before);
-        List<ContactGroup> after = app.contact().list();
-        Assert.assertEquals(after.size(), before.size() -1);
+        Contacts before = app.contact().all();
+        ContactGroup deletedContact = before.iterator().next();
+        app.contact().delete(deletedContact);
+        Contacts after = app.contact().all();
+        assertEquals(after.size(), before.size() -1);
 
-        before.remove(before.size() -1);
-        Assert.assertEquals(before, after);
+        app.contact().returnToHomePage();
+        assertThat(after, equalTo(before.withoutAdded(deletedContact)));
     }
 }

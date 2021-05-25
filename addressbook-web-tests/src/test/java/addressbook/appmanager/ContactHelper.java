@@ -1,16 +1,16 @@
 package addressbook.appmanager;
 
 import addressbook.model.ContactGroup;
-import addressbook.model.GroupData;
+import addressbook.model.Contacts;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -43,16 +43,16 @@ public class ContactHelper extends HelperBase {
         }
     }
 
-    public void initContactModification(int index) {
-        wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
+    public void initContactModification() {
+        wd.findElement(By.xpath("//img[@alt='Edit']")).click();
     }
 
     public void submitContactModification() {
-        click(By.xpath("(//input[@name='update'])[2]"));
+        wd.findElement(By.xpath("(//input[@name='update'])[2]")).click();
     }
 
-    public void chooseContact(int index) {
-        wd.findElements(By.name("selected[]")).get(index).click();
+    public void chooseContactById(int id) {
+        wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
 
     public void sumbitContactDeletion() {
@@ -68,16 +68,18 @@ public class ContactHelper extends HelperBase {
         submitContactCreation();
         returnToHomePage();
     }
+
     public void modify(ContactGroup group) {
-       fillNewContact(group,false);
-       submitContactModification();
-       returnToHomePage();
+        fillNewContact(group, false);
+        submitContactModification();
+        returnToHomePage();
     }
-    public void delete(List<ContactGroup> before) {
-     chooseContact(before.size() -1);
-     sumbitContactDeletion();
-     confirmDeleteAlert();
-     returnToHomePage();
+
+    public void delete(ContactGroup group) {
+        chooseContactById(group.getId());
+        sumbitContactDeletion();
+        confirmDeleteAlert();
+        returnToHomePage();
     }
 
     public boolean isThereAContact() {
@@ -88,18 +90,19 @@ public class ContactHelper extends HelperBase {
         return wd.findElements(By.name("selected[]")).size();
     }
 
-    public List<ContactGroup> list() {
-        List<ContactGroup> contacts = new ArrayList<ContactGroup>();
+    public Contacts all() {
+        Contacts contacts = new Contacts();
         List<WebElement> rows = wd.findElements(By.name("entry"));
         for (WebElement element : rows) {
             List<WebElement> cells = element.findElements(By.tagName("td"));
             String firstname = cells.get(2).getText();
             String lastname = cells.get(1).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-            ContactGroup contact = new ContactGroup(id, firstname, lastname , null, null,
-                    null, null, null, null);
+            ContactGroup contact = new ContactGroup().withId(id).withFirstname(firstname).withLastname(lastname);
             contacts.add(contact);
         }
+        wd.findElement(By.linkText("home")).click();
         return contacts;
+
     }
 }
