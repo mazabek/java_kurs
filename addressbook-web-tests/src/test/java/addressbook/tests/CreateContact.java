@@ -16,7 +16,7 @@ public class CreateContact extends TestBase {
     ContactGroup group = new ContactGroup()
             .withFirstname("Name").withLastname("Lastname").withAddress("Address")
             .withTelhome("123123123").withTelmobile("456456456").withTelwork("789798798")
-            .withEmail("test@test.com").withGroup("test1");
+            .withEmail("test@test.com").withEmail2("test2@test.com").withEmail3("test3@test.com").withGroup("test1");
     app.contact().create(group);
     //app.logOut();
     Contacts after = app.contact().all();

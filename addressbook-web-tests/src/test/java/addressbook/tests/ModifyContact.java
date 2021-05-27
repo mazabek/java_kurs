@@ -17,21 +17,22 @@ import static org.testng.Assert.assertEquals;
 public class ModifyContact extends TestBase{
     @BeforeMethod
     public void ensurePreconditions(){
+        app.contact().returnToHomePage();
         if(! app.contact().isThereAContact()){
             app.goTo().goToAddNewContact();
             app.contact().create(new ContactGroup().withFirstname("Name").withLastname("Lastname").withAddress("Address")
                     .withTelhome("123123123").withTelmobile("456456456").withTelwork("789798798")
-                    .withEmail("test@test.com").withGroup("test1"));
+                    .withEmail("test@test.com").withEmail2("test2@test.com").withEmail3("test3@test.com").withGroup("test1"));
         }
     }
     @Test
     public void testModifyContact(){
         Contacts before = app.contact().all();
         ContactGroup modifiedContact = before.iterator().next();
+        app.contact().initContactModification();
         ContactGroup groupContact = new ContactGroup().withId(modifiedContact.getId()).withFirstname("Name").withLastname("Lastname").withAddress("Address")
                 .withTelhome("123123123").withTelmobile("456456456").withTelwork("789798798")
-                .withEmail("test@test.com").withGroup("test1");
-        app.contact().initContactModification();
+                .withEmail("test@test.com").withEmail2("test2@test.com").withEmail3("test3@test.com").withGroup("test1");
         app.contact().modify(groupContact);
         Contacts after = app.contact().all();
         assertEquals(after.size(), before.size());

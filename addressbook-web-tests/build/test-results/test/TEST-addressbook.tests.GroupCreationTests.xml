@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="addressbook.tests.GroupCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-25T14:36:49" hostname="J4KK6S2" time="1.334">
-  <properties/>
-  <testcase name="testGroupCreation" classname="addressbook.tests.GroupCreationTests" time="1.334"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
