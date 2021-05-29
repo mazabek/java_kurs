@@ -35,6 +35,7 @@ public class ContactHelper extends HelperBase {
         type(By.name("email"), contactGroup.getEmail());
         type(By.name("email2"), contactGroup.getEmail2());
         type(By.name("email3"), contactGroup.getEmail3());
+        attach(By.name("photo"), contactGroup.getPhoto());
 
         if (creation) {
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactGroup.getGroup());
@@ -129,5 +130,15 @@ public class ContactHelper extends HelperBase {
 
     private void initContactModificationById(int id) {
         wd.findElement(By.cssSelector("a[href='edit.php?id=" + id + "']")).click();
+    }
+
+    public ContactGroup infoFromDetails(ContactGroup contact) {
+        initContactDetailsById(contact.getId());
+        String information = wd.findElement(By.xpath("//div[@id='content']")).getText();
+        return new ContactGroup().withAllInformation(information);
+    }
+
+    private void initContactDetailsById(int id) {
+        wd.findElement(By.cssSelector("a[href='view.php?id=" + id + "']")).click();
     }
 }

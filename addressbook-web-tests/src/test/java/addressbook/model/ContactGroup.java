@@ -1,5 +1,6 @@
 package addressbook.model;
 
+import java.io.File;
 import java.util.Objects;
 
 public class ContactGroup {
@@ -16,9 +17,10 @@ public class ContactGroup {
     private String email2;
     private String email3;
     private String group;
+    private String information;
+    private File photo;
 
-
-    public int getId() {
+     public int getId() {
         return id;
     }
 
@@ -37,6 +39,22 @@ public class ContactGroup {
 
     public ContactGroup withAllEmails(String allEmails) {
         this.allEmails = allEmails;
+        return this;
+    }
+    public ContactGroup withAllInformation(String information) {
+        this.information = information;
+        return this;
+    }
+    public String getAllInformation() {
+        return information;
+    }
+
+    public File getPhoto() {
+        return photo;
+    }
+
+    public ContactGroup withPhoto(File photo) {
+        this.photo = photo;
         return this;
     }
 
