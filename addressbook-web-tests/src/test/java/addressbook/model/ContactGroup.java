@@ -10,13 +10,33 @@ public class ContactGroup {
     private String telhome;
     private String telmobile;
     private String telwork;
+    private String allPhones;
+    private String allEmails;
     private String email;
     private String email2;
     private String email3;
     private String group;
 
+
     public int getId() {
         return id;
+    }
+
+    public String getAllPhones() {
+        return allPhones;
+    }
+
+    public ContactGroup withAllPhones(String allPhones) {
+        this.allPhones = allPhones;
+        return this;
+    }
+    public String getAllEmails() {
+        return allEmails;
+    }
+
+    public ContactGroup withAllEmails(String allEmails) {
+        this.allEmails = allEmails;
+        return this;
     }
 
     @Override
