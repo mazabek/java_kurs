@@ -8,9 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -120,9 +118,9 @@ public class ContactHelper extends HelperBase {
         String telmobile = wd.findElement(By.name("mobile")).getAttribute("value");
         String telwork = wd.findElement(By.name("work")).getAttribute("value");
         String address = wd.findElement(By.name("address")).getAttribute("value");
-        String email= wd.findElement(By.name("email")).getAttribute("value");
-        String email2= wd.findElement(By.name("email2")).getAttribute("value");
-        String email3= wd.findElement(By.name("email3")).getAttribute("value");
+        String email = wd.findElement(By.name("email")).getAttribute("value");
+        String email2 = wd.findElement(By.name("email2")).getAttribute("value");
+        String email3 = wd.findElement(By.name("email3")).getAttribute("value");
         wd.navigate().back();
         return new ContactGroup().withId(contact.getId()).withFirstname(firstname).withLastname(lastname)
                 .withTelhome(telhome).withTelmobile(telmobile).withTelwork(telwork).withAddress(address)

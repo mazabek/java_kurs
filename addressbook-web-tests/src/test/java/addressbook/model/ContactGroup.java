@@ -30,6 +30,7 @@ public class ContactGroup {
         this.allPhones = allPhones;
         return this;
     }
+
     public String getAllEmails() {
         return allEmails;
     }
@@ -91,10 +92,12 @@ public class ContactGroup {
         this.email = email;
         return this;
     }
+
     public ContactGroup withEmail2(String email2) {
         this.email2 = email2;
         return this;
     }
+
     public ContactGroup withEmail3(String email3) {
         this.email3 = email3;
         return this;
@@ -132,9 +135,11 @@ public class ContactGroup {
     public String getEmail() {
         return email;
     }
+
     public String getEmail2() {
         return email2;
     }
+
     public String getEmail3() {
         return email3;
     }
@@ -142,7 +147,6 @@ public class ContactGroup {
     public String getGroup() {
         return group;
     }
-
 
 
     @Override
