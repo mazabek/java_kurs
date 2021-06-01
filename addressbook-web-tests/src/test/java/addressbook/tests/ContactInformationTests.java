@@ -34,7 +34,7 @@ public class ContactInformationTests extends TestBase {
         return Arrays.asList(contact.getFirstname(), contact.getLastname(), contact.getAddress(),
                 contact.getEmail(), contact.getEmail2(),contact.getEmail3(),
                 contact.getTelhome(), contact.getTelmobile(), contact.getTelwork())
-                .stream().filter((s) -> !s.equals(""))//odfiltrowanie pustych łańcuchów
+                .stream().filter((s) -> s != null && !s.equals(""))//odfiltrowanie pustych łańcuchów
                 .map(ContactInformationTests::cleaned) // funkcja oczyszczania
                 .collect(Collectors.joining("\n")); // za pomocą kolektora wybieramy oczyszczony łańcuch
     }
