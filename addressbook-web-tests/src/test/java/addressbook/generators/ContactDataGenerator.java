@@ -52,29 +52,29 @@ public class ContactDataGenerator {
     private void saveAsJson(List<ContactGroup> groupList, File file) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
         String json = gson.toJson(groupList);
-        Writer writer = new FileWriter(file);
-        writer.write(json);
-        writer.close();
+        try (Writer writer = new FileWriter(file)){
+            writer.write(json);
+        }
     }
 
     private void saveAsXml(List<ContactGroup> groupList, File file) throws IOException {
         XStream xstream = new XStream();
         xstream.processAnnotations(ContactGroup.class);
         String xml = xstream.toXML(groupList);
-        Writer writer = new FileWriter(file);
-        writer.write(xml);
-        writer.close();
+        try(Writer writer = new FileWriter(file)){
+            writer.write(xml);
+        }
     }
 
     private void saveAsCsv(List<ContactGroup> groupList, File file) throws IOException {
         System.out.println(new File(".").getAbsolutePath());
-        Writer writer = new FileWriter(file);
-        for (ContactGroup contactGroup: groupList){
-            writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contactGroup.getFirstname(), contactGroup.getLastname(), contactGroup.getAddress(),
-                    contactGroup.getTelhome(), contactGroup.getTelmobile(), contactGroup.getTelwork(), contactGroup.getEmail(), contactGroup.getEmail2(),
-                    contactGroup.getEmail3(), contactGroup.getGroup()));
+        try (Writer writer = new FileWriter(file)){
+            for (ContactGroup contactGroup: groupList){
+                writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contactGroup.getFirstname(), contactGroup.getLastname(), contactGroup.getAddress(),
+                        contactGroup.getTelhome(), contactGroup.getTelmobile(), contactGroup.getTelwork(), contactGroup.getEmail(), contactGroup.getEmail2(),
+                        contactGroup.getEmail3(), contactGroup.getGroup()));
+            }
         }
-        writer.close();
     }
 
     private List<ContactGroup> generateContacts(int count) {
