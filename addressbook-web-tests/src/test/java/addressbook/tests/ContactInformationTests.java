@@ -20,26 +20,27 @@ public class ContactInformationTests extends TestBase {
                     .withEmail("test@test.com").withGroup("test1"));
         }
     }
-    @Test (enabled = false)
+    @Test
     public void testContactInformation(){
         app.contact().returnToHomePage();
         ContactGroup contact = app.contact().all().iterator().next();
-        ContactGroup information = app.contact().infoFromDetails(contact);
+       String information = app.contact().infoFromDetails(contact);
 
-        assertThat(mergeInformation(contact), equalTo(information));
+        assertThat(mergeInformation(contact), equalTo(cleanInfo(information)));
 
     }
 
     private String mergeInformation(ContactGroup contact) {
-        return Arrays.asList(contact.getFirstname(), contact.getLastname(), contact.getAddress(),
-                contact.getEmail(), contact.getEmail2(),contact.getEmail3(),
-                contact.getTelhome(), contact.getTelmobile(), contact.getTelwork())
+        return Arrays.asList(contact.getFirstname(), contact.getLastname(), contact.getAddress(),cleanInfo(contact.getAllPhones()), contact.getAllEmails())
                 .stream().filter((s) -> s != null && !s.equals(""))//odfiltrowanie pustych łańcuchów
                 .map(ContactInformationTests::cleaned) // funkcja oczyszczania
                 .collect(Collectors.joining("\n")); // za pomocą kolektora wybieramy oczyszczony łańcuch
     }
     public static String cleaned(String tableInfo) {
-        return tableInfo.replaceAll("\\s", "").replaceAll("[-()]", "");
+        return tableInfo.replaceAll("[-()]", "");
     }
-
+    public static String cleanInfo(String information) {
+        return information.replaceAll("H: ", "").replaceAll("M: ", "")
+                .replaceAll("W: ", "").replaceAll("\n\n", "\n");
+    }
 }

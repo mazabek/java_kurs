@@ -23,16 +23,4 @@
     <email3>test 1</email3>
     <group>test 1</group>
   </contact>
-  <contact>
-    <firstname>test 2</firstname>
-    <lastname>test 2</lastname>
-    <address>test 2</address>
-    <telhome>test 2</telhome>
-    <telmobile>test 2</telmobile>
-    <telwork>test 2</telwork>
-    <email>test 2</email>
-    <email2>test 2</email2>
-    <email3>test 2</email3>
-    <group>test 2</group>
-  </contact>
 </list>

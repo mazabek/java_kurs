@@ -22,17 +22,5 @@
     "email2": "test 1",
     "email3": "test 1",
     "group": "test 1"
-  },
-  {
-    "firstname": "test 2",
-    "lastname": "test 2",
-    "address": "test 2",
-    "telhome": "test 2",
-    "telmobile": "test 2",
-    "telwork": "test 2",
-    "email": "test 2",
-    "email2": "test 2",
-    "email3": "test 2",
-    "group": "test 2"
   }
 ]

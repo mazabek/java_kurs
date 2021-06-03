@@ -132,10 +132,10 @@ public class ContactHelper extends HelperBase {
         wd.findElement(By.cssSelector("a[href='edit.php?id=" + id + "']")).click();
     }
 
-    public ContactGroup infoFromDetails(ContactGroup contact) {
+    public String infoFromDetails(ContactGroup contact) {
         initContactDetailsById(contact.getId());
         String information = wd.findElement(By.xpath("//div[@id='content']")).getText();
-        return new ContactGroup().withAllInformation(information);
+        return information;
     }
 
     private void initContactDetailsById(int id) {

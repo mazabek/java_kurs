@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="addressbook.tests.CreateContact" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-06-02T15:48:55" hostname="J4KK6S2" time="51.527">
-  <properties/>
-  <testcase name="testCreateContact[0](ContactGroup{id='2147483647', firstname='test 0', lastname='test 0'})" classname="addressbook.tests.CreateContact" time="15.762"/>
-  <testcase name="testCreateContact[1](ContactGroup{id='2147483647', firstname='test 1', lastname='test 1'})" classname="addressbook.tests.CreateContact" time="17.724"/>
-  <testcase name="testCreateContact[2](ContactGroup{id='2147483647', firstname='test 2', lastname='test 2'})" classname="addressbook.tests.CreateContact" time="18.039"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
