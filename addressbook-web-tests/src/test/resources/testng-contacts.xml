@@ -10,6 +10,9 @@
             <class name="addressbook.tests.ContactEmailTests"/>
             <class name="addressbook.tests.ContactAddressTests"/>
             <class name="addressbook.tests.ContactInformationTests"/>
+
+            <class name="addressbook.tests.DbConnectionTest"/>
+            <class name="addressbook.tests.HbConnectionTest"/>
         </classes>
     </test>
 </suite>
