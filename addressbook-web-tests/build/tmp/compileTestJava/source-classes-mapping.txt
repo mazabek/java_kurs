@@ -1,17 +1,3 @@
-addressbook/appmanager/HelperBase.java
- addressbook.appmanager.HelperBase
-addressbook/appmanager/SessionHelper.java
- addressbook.appmanager.SessionHelper
-addressbook/model/ContactGroup.java
- addressbook.model.ContactGroup
-addressbook/appmanager/ContactHelper.java
- addressbook.appmanager.ContactHelper
-addressbook/model/Contacts.java
- addressbook.model.Contacts
-addressbook/appmanager/NavigationHelper.java
- addressbook.appmanager.NavigationHelper
-addressbook/generators/ContactDataGenerator.java
- addressbook.generators.ContactDataGenerator
 addressbook/tests/ModifyContact.java
  addressbook.tests.ModifyContact
 addressbook/tests/CreateContact.java
@@ -22,31 +8,45 @@ addressbook/model/GroupData.java
 addressbook/tests/GroupCreationTests.java
  addressbook.tests.GroupCreationTests
  addressbook.tests.GroupCreationTests$1
+addressbook/model/Contacts.java
+ addressbook.model.Contacts
+addressbook/appmanager/NavigationHelper.java
+ addressbook.appmanager.NavigationHelper
 addressbook/tests/ContactInformationTests.java
  addressbook.tests.ContactInformationTests
 addressbook/appmanager/GroupHelper.java
  addressbook.appmanager.GroupHelper
 addressbook/model/Groups.java
  addressbook.model.Groups
+addressbook/model/ContactGroup.java
+ addressbook.model.ContactGroup
 addressbook/generators/GroupDataGenerator.java
  addressbook.generators.GroupDataGenerator
+addressbook/appmanager/SessionHelper.java
+ addressbook.appmanager.SessionHelper
 addressbook/tests/DeleteContact.java
  addressbook.tests.DeleteContact
 addressbook/tests/TestBase.java
  addressbook.tests.TestBase
 addressbook/tests/ContactPhoneTests.java
  addressbook.tests.ContactPhoneTests
-addressbook/tests/ContactEmailTests.java
- addressbook.tests.ContactEmailTests
+addressbook/appmanager/HelperBase.java
+ addressbook.appmanager.HelperBase
+addressbook/tests/HbConnectionTest.java
+ addressbook.tests.HbConnectionTest
 addressbook/tests/DbConnectionTest.java
  addressbook.tests.DbConnectionTest
 addressbook/tests/GroupModificationTests.java
  addressbook.tests.GroupModificationTests
+addressbook/generators/ContactDataGenerator.java
+ addressbook.generators.ContactDataGenerator
 addressbook/tests/ContactAddressTests.java
  addressbook.tests.ContactAddressTests
+addressbook/appmanager/ContactHelper.java
+ addressbook.appmanager.ContactHelper
 addressbook/tests/GroupDeletionTests.java
  addressbook.tests.GroupDeletionTests
 addressbook/appmanager/ApplicationManager.java
  addressbook.appmanager.ApplicationManager
-addressbook/tests/HbConnectionTest.java
- addressbook.tests.HbConnectionTest
+addressbook/tests/ContactEmailTests.java
+ addressbook.tests.ContactEmailTests
