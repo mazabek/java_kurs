@@ -71,7 +71,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void modify(ContactGroup group) {
-        fillNewContact(group, false);
+        fillNewContact(group, true);
         submitContactModification();
         returnToHomePage();
     }

@@ -7,6 +7,7 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.File;
+import java.util.List;
 import java.util.Objects;
 
 @XStreamAlias("contact")
@@ -20,11 +21,11 @@ public class ContactGroup {
     private int id = Integer.MAX_VALUE;
     @Expose
     @Column(name = "firstname")
-    @Type(type= "text")
+   // @Type(type= "text")
     private String firstname;
     @Expose
     @Column(name = "lastname")
-    @Type(type= "text")
+    //@Type(type= "text")
     private String lastname;
     @Expose
     @Column(name = "address")
@@ -67,6 +68,7 @@ public class ContactGroup {
     @Type(type= "text")
     private String photo;
 
+
     @Override
     public String toString() {
         return "ContactGroup{" +
@@ -101,6 +103,20 @@ public class ContactGroup {
         this.information = information;
         return this;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ContactGroup that = (ContactGroup) o;
+        return id == that.id && Objects.equals(firstname, that.firstname) && Objects.equals(lastname, that.lastname) && Objects.equals(address, that.address) && Objects.equals(telhome, that.telhome) && Objects.equals(telmobile, that.telmobile) && Objects.equals(telwork, that.telwork) && Objects.equals(email, that.email) && Objects.equals(email2, that.email2) && Objects.equals(email3, that.email3) && Objects.equals(group, that.group);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstname, lastname, address, telhome, telmobile, telwork, email, email2, email3, group);
+    }
+
     public String getAllInformation() {
         return information;
     }
@@ -112,19 +128,6 @@ public class ContactGroup {
     public ContactGroup withPhoto(File photo) {
         this.photo = photo.getPath();
         return this;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ContactGroup that = (ContactGroup) o;
-        return id == that.id && Objects.equals(firstname, that.firstname) && Objects.equals(lastname, that.lastname);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, firstname, lastname);
     }
 
     public ContactGroup withId(int id) {
