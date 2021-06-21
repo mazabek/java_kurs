@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="soap.GeoIpServiceTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-06-21T12:22:06" hostname="J4KK6S2" time="0.016">
+<testsuite name="soap.GeoIpServiceTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-06-21T13:06:54" hostname="J4KK6S2" time="0.01">
   <properties/>
-  <testcase name="testMyIp" classname="soap.GeoIpServiceTests" time="0.016">
+  <testcase name="testMyIp" classname="soap.GeoIpServiceTests" time="0.01">
     <failure message="javax.xml.ws.WebServiceException: Provider com.sun.xml.internal.ws.spi.ProviderImpl not found" type="javax.xml.ws.WebServiceException">javax.xml.ws.WebServiceException: Provider com.sun.xml.internal.ws.spi.ProviderImpl not found
 	at javax.xml.ws.spi.FactoryFinder$1.createException(FactoryFinder.java:61)
 	at javax.xml.ws.spi.FactoryFinder$1.createException(FactoryFinder.java:58)

@@ -6,6 +6,8 @@ repositories {
 }
 dependencies {
     implementation 'org.testng:testng:7.3.0'
+    implementation 'com.sun.xml.ws:rt:2.3.2'
+    implementation 'com.sun.xml.ws:jaxws-rt:2.3.2'
 }
 test {
     useTestNG {
