@@ -5,6 +5,9 @@ repositories {
 }
 dependencies {
     implementation 'org.testng:testng:7.3.0'
+    implementation 'com.sun.xml.ws:rt:2.3.2'
+    implementation 'com.sun.xml.ws:jaxws-rt:2.3.2'
+    implementation 'biz.futureware.mantis:mantis-axis-soap-client:1.2.19'
 }
 
 buildscript{
@@ -28,5 +31,6 @@ wsdl2java {
 
 test {
     useTestNG {
+        suites 'src/test/resources/testng.xml'
     }
 }

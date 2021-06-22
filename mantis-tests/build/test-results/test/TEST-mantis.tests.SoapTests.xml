@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="mantis.tests.SoapTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-06-22T13:05:16" hostname="J4KK6S2" time="1.019">
+  <properties/>
+  <testcase name="testCreateIssue" classname="mantis.tests.SoapTests" time="0.902"/>
+  <testcase name="testGetProjects" classname="mantis.tests.SoapTests" time="0.114"/>
+  <system-out><![CDATA[1
+test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
