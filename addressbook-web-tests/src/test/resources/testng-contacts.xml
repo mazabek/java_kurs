@@ -13,6 +13,7 @@
 
             <class name="addressbook.tests.DbConnectionTest"/>
             <class name="addressbook.tests.HbConnectionTest"/>
+            <class name="addressbook.tests.AddAndRemoveContactInGroup"/>
         </classes>
     </test>
 </suite>

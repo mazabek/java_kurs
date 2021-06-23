@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="addressbook.tests.GroupDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-18T11:40:30" hostname="J4KK6S2" time="0.373">
+<testsuite name="addressbook.tests.GroupDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-23T07:04:03" hostname="J4KK6S2" time="0.386">
   <properties/>
-  <testcase name="testGroupDeletion" classname="addressbook.tests.GroupDeletionTests" time="0.373"/>
-  <system-out><![CDATA[13:40:30.710 [Test worker] INFO  addressbook.tests.TestBase - Start test testGroupDeletion with parameters []
-13:40:30.769 [Test worker] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+  <testcase name="testGroupDeletion" classname="addressbook.tests.GroupDeletionTests" time="0.386"/>
+  <system-out><![CDATA[09:04:03.305 [Test worker] INFO  addressbook.tests.TestBase - Start test testGroupDeletion with parameters []
+09:04:03.356 [Test worker] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
 Hibernate: select groupdata0_.group_id as group_id1_1_, groupdata0_.group_footer as group_fo2_1_, groupdata0_.group_header as group_he3_1_, groupdata0_.group_name as group_na4_1_ from group_list groupdata0_
 Hibernate: select groupdata0_.group_id as group_id1_1_, groupdata0_.group_footer as group_fo2_1_, groupdata0_.group_header as group_he3_1_, groupdata0_.group_name as group_na4_1_ from group_list groupdata0_
 Hibernate: select groupdata0_.group_id as group_id1_1_, groupdata0_.group_footer as group_fo2_1_, groupdata0_.group_header as group_he3_1_, groupdata0_.group_name as group_na4_1_ from group_list groupdata0_
-13:40:31.285 [Test worker] INFO  addressbook.tests.TestBase - Stop test testGroupDeletion
+09:04:03.889 [Test worker] INFO  addressbook.tests.TestBase - Stop test testGroupDeletion
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class SoapHelper {
+public class SoapHelper{
 
     private ApplicationManager app;
 
@@ -43,6 +43,7 @@ public class SoapHelper {
         issueData.setDescription(issue.getDescription());
         issueData.setProject(new ObjectRef(BigInteger.valueOf(issue.getProject().getId()), issue.getProject().getName()));
         issueData.setCategory(categories[0]);
+        issueData.setId(BigInteger.valueOf(issue.getProject().getId()));
 
 
         BigInteger issueId = mc.mc_issue_add("administrator", "root", issueData);
@@ -55,5 +56,4 @@ public class SoapHelper {
                 .withProject(new Project().withId(createdIssueData.getId().intValue()).withName(createdIssueData.getProject().getName()));
 
     }
-
 }

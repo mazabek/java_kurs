@@ -5,6 +5,7 @@ import mantis.model.Project;
 import org.testng.annotations.Test;
 
 import javax.xml.rpc.ServiceException;
+import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.rmi.RemoteException;
 import java.util.Set;
@@ -30,5 +31,10 @@ public class SoapTests extends TestBase {
                 .withProject(projects.iterator().next());
         Issue created = app.soap().addIssue(issue);
         assertEquals(issue.getSummary(), created.getSummary());
+    }
+
+    @Test
+    public void testIntegration(){
+
     }
 }

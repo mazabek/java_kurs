@@ -38,7 +38,7 @@ public class ContactHelper extends HelperBase {
         attach(By.name("photo"), contactGroup.getPhoto());
 
         if (creation) {
-            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactGroup.getGroup());
+           // new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactGroup.getGroup());
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
@@ -140,5 +140,13 @@ public class ContactHelper extends HelperBase {
 
     private void initContactDetailsById(int id) {
         wd.findElement(By.cssSelector("a[href='view.php?id=" + id + "']")).click();
+    }
+
+    public void initAddToGroup() {
+        click(By.name("add"));
+    }
+
+    public void goToGroupContactPage() {
+        click(By.xpath("//div[@id='content']/div/i/a"));
     }
 }

@@ -17,7 +17,8 @@ public class ContactInformationTests extends TestBase {
             app.goTo().goToAddNewContact();
             app.contact().create(new ContactGroup().withFirstname("Name").withLastname("Lastname").withAddress("Address")
                     .withTelhome("123123123").withTelmobile("456456456").withTelwork("789798798")
-                    .withEmail("test@test.com").withGroup("test1"));
+                    .withEmail("test@test.com"));
+            //.withGroup("test1")
         }
     }
     @Test

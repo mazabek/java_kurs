@@ -72,7 +72,8 @@ public class ContactDataGenerator {
             for (ContactGroup contactGroup: groupList){
                 writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contactGroup.getFirstname(), contactGroup.getLastname(), contactGroup.getAddress(),
                         contactGroup.getTelhome(), contactGroup.getTelmobile(), contactGroup.getTelwork(), contactGroup.getEmail(), contactGroup.getEmail2(),
-                        contactGroup.getEmail3(), contactGroup.getGroup()));
+                        contactGroup.getEmail3()));
+                //, contactGroup.getGroup()
             }
         }
     }
@@ -83,7 +84,8 @@ public class ContactDataGenerator {
             groupList.add(new ContactGroup().withFirstname(String.format("test %s", i)).withLastname(String.format("test %s", i))
                     .withAddress(String.format("test %s", i)).withTelhome(String.format("test %s", i)).withTelmobile(String.format("test %s", i))
                     .withTelwork(String.format("test %s", i)).withEmail(String.format("test %s", i)).withEmail2(String.format("test %s", i)).withEmail3(String.format("test %s", i))
-                    .withGroup(String.format("test %s", i)));
+                    );
+            //.withGroup(String.format("test %s", i))
         }
         return groupList;
     }

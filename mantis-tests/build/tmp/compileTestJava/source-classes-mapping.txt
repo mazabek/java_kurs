@@ -8,25 +8,25 @@ mantis/model/Issue.java
  mantis.model.Issue
 mantis/appmanager/ChangePasswordHelper.java
  mantis.appmanager.ChangePasswordHelper
-mantis/tests/SoapTests.java
- mantis.tests.SoapTests
+mantis/appmanager/HelperBase.java
+ mantis.appmanager.HelperBase
 mantis/appmanager/SoapHelper.java
  mantis.appmanager.SoapHelper
+mantis/appmanager/FtpHelper.java
+ mantis.appmanager.FtpHelper
+mantis/appmanager/RegistrationHelper.java
+ mantis.appmanager.RegistrationHelper
+mantis/appmanager/MailHelper.java
+ mantis.appmanager.MailHelper
+mantis/appmanager/HttpSession.java
+ mantis.appmanager.HttpSession
+mantis/appmanager/ApplicationManager.java
+ mantis.appmanager.ApplicationManager
+mantis/tests/SoapTests.java
+ mantis.tests.SoapTests
 mantis/tests/TestBase.java
  mantis.tests.TestBase
 mantis/tests/RegistrationTests.java
  mantis.tests.RegistrationTests
 mantis/tests/LoginTests.java
  mantis.tests.LoginTests
-mantis/appmanager/HttpSession.java
- mantis.appmanager.HttpSession
-mantis/appmanager/ApplicationManager.java
- mantis.appmanager.ApplicationManager
-mantis/appmanager/MailHelper.java
- mantis.appmanager.MailHelper
-mantis/appmanager/RegistrationHelper.java
- mantis.appmanager.RegistrationHelper
-mantis/appmanager/FtpHelper.java
- mantis.appmanager.FtpHelper
-mantis/appmanager/HelperBase.java
- mantis.appmanager.HelperBase

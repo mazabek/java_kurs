@@ -18,7 +18,8 @@ public class ContactEmailTests extends TestBase {
             app.contact().create(new ContactGroup().withFirstname("Name").withLastname("Lastname").withAddress("ul. Wesoła 1/11,\n" +
                     "11-111 Warszawa")
                     .withTelhome("123123123").withTelmobile("456456456").withTelwork("789798798")
-                    .withEmail("test@test.com").withEmail2("test2@test.com").withEmail3("test3@test.com").withGroup("test1"));
+                    .withEmail("test@test.com").withEmail2("test2@test.com").withEmail3("test3@test.com"));
+            //.withGroup("test1")
         }
     }
 

@@ -22,7 +22,8 @@ public class ModifyContact extends TestBase{
             app.goTo().goToAddNewContact();
             app.contact().create(new ContactGroup().withFirstname("Name").withLastname("Lastname").withAddress("Address")
                     .withTelhome("123123123").withTelmobile("456456456").withTelwork("789798798")
-                    .withEmail("test@test.com").withEmail2("test2@test.com").withEmail3("test3@test.com").withGroup("test1"));
+                    .withEmail("test@test.com").withEmail2("test2@test.com").withEmail3("test3@test.com"));
+            //.withGroup("test1")
         }
     }
     @Test
@@ -32,7 +33,8 @@ public class ModifyContact extends TestBase{
         app.contact().initContactModification();
         ContactGroup groupContact = new ContactGroup().withId(modifiedContact.getId()).withFirstname("Name").withLastname("Lastname").withAddress("Address")
                 .withTelhome("123123123").withTelmobile("456456456").withTelwork("789798798")
-                .withEmail("test@test.com").withEmail2("test2@test.com").withEmail3("test3@test.com").withGroup("test1");
+                .withEmail("test@test.com").withEmail2("test2@test.com").withEmail3("test3@test.com");
+        //.withGroup("test1")
         app.contact().modify(groupContact);
         Contacts after = app.db().contacts();
         assertEquals(after.size(), before.size());

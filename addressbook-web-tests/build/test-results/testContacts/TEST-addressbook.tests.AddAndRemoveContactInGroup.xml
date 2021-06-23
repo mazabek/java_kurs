@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="addressbook.tests.AddAndRemoveContactInGroup" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-06-23T09:38:14" hostname="J4KK6S2" time="0.704">
+  <properties/>
+  <testcase name="addContactToGroup" classname="addressbook.tests.AddAndRemoveContactInGroup" time="0.348"/>
+  <testcase name="removeContactToGroup" classname="addressbook.tests.AddAndRemoveContactInGroup" time="0.339"/>
+  <system-out><![CDATA[11:38:14.136 [Test worker] INFO  addressbook.tests.TestBase - Start test addContactToGroup with parameters []
+11:38:14.501 [Test worker] INFO  addressbook.tests.TestBase - Stop test addContactToGroup
+11:38:14.505 [Test worker] INFO  addressbook.tests.TestBase - Start test removeContactToGroup with parameters []
+11:38:14.854 [Test worker] INFO  addressbook.tests.TestBase - Stop test removeContactToGroup
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

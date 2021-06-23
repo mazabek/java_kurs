@@ -7,8 +7,10 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.File;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @XStreamAlias("contact")
 @Entity
@@ -61,12 +63,14 @@ public class ContactGroup {
     private String allEmails;
     @Expose
     @Transient
-    private String group;
-    @Transient
     private String information;
     @Column(name = "photo")
     @Type(type= "text")
     private String photo;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "address_in_groups", joinColumns = @JoinColumn(name="id"), inverseJoinColumns = @JoinColumn(name="group_id"))
+    private Set<GroupData> groups = new HashSet<GroupData>();
 
 
     @Override
@@ -109,12 +113,14 @@ public class ContactGroup {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContactGroup that = (ContactGroup) o;
-        return id == that.id && Objects.equals(firstname, that.firstname) && Objects.equals(lastname, that.lastname) && Objects.equals(address, that.address) && Objects.equals(telhome, that.telhome) && Objects.equals(telmobile, that.telmobile) && Objects.equals(telwork, that.telwork) && Objects.equals(email, that.email) && Objects.equals(email2, that.email2) && Objects.equals(email3, that.email3) && Objects.equals(group, that.group);
+        return id == that.id && Objects.equals(firstname, that.firstname) && Objects.equals(lastname, that.lastname) && Objects.equals(address, that.address) && Objects.equals(telhome, that.telhome) && Objects.equals(telmobile, that.telmobile) && Objects.equals(telwork, that.telwork) && Objects.equals(email, that.email) && Objects.equals(email2, that.email2) && Objects.equals(email3, that.email3);
+        // && Objects.equals(group, that.group)
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstname, lastname, address, telhome, telmobile, telwork, email, email2, email3, group);
+        return Objects.hash(id, firstname, lastname, address, telhome, telmobile, telwork, email, email2, email3);
+        //, group
     }
 
     public String getAllInformation() {
@@ -180,11 +186,6 @@ public class ContactGroup {
         return this;
     }
 
-    public ContactGroup withGroup(String group) {
-        this.group = group;
-        return this;
-    }
-
     public String getFirstname() {
         return firstname;
     }
@@ -221,9 +222,7 @@ public class ContactGroup {
         return email3;
     }
 
-    public String getGroup() {
-        return group;
+    public Groups getGroups() {
+        return new Groups(groups);
     }
-
-
 }
